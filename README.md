@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/GaelXoconoxtle/2-JUNIOR-interactive-card-details-form-main-by-GaelXoconoxtle/tree/main](https://github.com/GaelXoconoxtle/2-JUNIOR-interactive-card-details-form-main-by-GaelXoconoxtle/tree/main)
+- Live Site URL: [https://interactivecarddetails-gaelxoconoxtle.netlify.app/](https://interactivecarddetails-gaelxoconoxtle.netlify.app/)
 
 ## My process
 
