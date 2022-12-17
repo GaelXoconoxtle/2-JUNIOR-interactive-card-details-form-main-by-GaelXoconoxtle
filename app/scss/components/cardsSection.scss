@@ -1,0 +1,218 @@
+@use '../util/' as u;
+
+main {
+  margin: auto;
+  overflow: hidden;
+
+  //Responsive height to maintain the footer at the end of the page
+  @include u.breakpoint-upHeight(mobileBigHeight) {
+    height: 100vh;
+  }
+
+  @include u.breakpoint-up(desktop) {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: u.rem(15);
+  }
+}
+
+.cardsSection {
+  padding: u.rem(40) 0;
+  position: relative;
+  background: url("../images/bg-main-mobile.png") no-repeat;
+  background-size: cover;
+
+  @include u.breakpoint-up(min) {
+    padding: u.rem(40) 0 u.rem(70) 0;
+  }
+
+  @include u.breakpoint-up(desktop) {
+    background: url("/images/bg-main-desktop.png") no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: calc(1/3 * 100vw);
+  }
+}
+
+@include u.breakpoint-up(desktop) { //VER LA FORMA DE CAMBIAR ESTO
+  .cards-container {
+    display: table;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .cards-child-container {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.card-front, .card-back {
+  color: u.$white;
+  width: 76%;
+
+  @include u.breakpoint-up(size) {
+    width: fit-content;
+  }
+}
+
+.card-back {
+  position: relative;
+  margin-right: 4%;
+  margin-left: auto;
+
+  @include u.breakpoint-up(size) {
+    margin: auto;
+    transform: translateX(u.rem(50));
+  }
+
+  @include u.breakpoint-up(desktop) {
+    transform: translateX(calc(1/2 * 1/3 * 100vw));
+  }
+
+  &__cvc {
+    position: absolute;
+    letter-spacing: u.rem(1);
+    font-size: 2.5vw;
+    top: 19vw;
+    left: 80%;
+
+    @include u.breakpoint-up(size) {
+      font-size: u.rem(14);
+      top: u.rem(112);
+      left: u.rem(360);
+    }
+
+    @include u.breakpoint-up(desktop) {
+      font-size: 1vw;
+      top: 8vw;
+      left: 80.5%;
+    }
+
+    @include u.breakpoint-up(desktop-size) {
+      font-size: u.rem(14);
+      top: u.rem(112);
+      left: u.rem(360);
+    }
+  }
+}
+
+.card-front {
+  @include u.breakpoint-down(desktop) {
+    position: absolute;
+  }
+
+  width: fit-content;
+  letter-spacing: 1.5px;
+
+  @include u.breakpoint-down(size) {
+    left: 4%;
+    top: calc(u.rem(40) + 23.65vw);
+    padding-right: 20%;
+  }
+
+  @include u.breakpoint-up(size) {
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding-right: u.rem(175);
+    top: u.rem(179);
+    transform: translateX(u.rem(50));
+  }
+
+  @include u.breakpoint-up(desktop) {
+    transform: translateX(calc(1/2 * 1/3 * 100vw - u.rem(90)));
+    margin-bottom: u.rem(32);
+    padding-right: 0;
+  }
+
+  &__child {
+    position: relative;
+  }
+
+  &__logo, &__numbers, &__name, &__expiration {
+		position: absolute;
+	}
+
+  &__logo, &__numbers, &__name {
+		left: 6.5%;
+	}
+
+  &__logo {
+		width: 19%;
+		top: 12%;
+	}
+
+  &__numbers {
+		bottom: 30%;
+		max-width: 80%;
+		letter-spacing: 2.5px;
+		white-space: nowrap;
+	}
+
+  &__name, &__expiration {
+		color: u.$light-grayish-violet;
+		bottom: 15%;
+	}
+
+  &__expiration {
+    right: 6.5%;
+  }
+
+  // Responsive letter size:
+  @include u.breakpoint-down(min) {
+    &__numbers {
+      font-size: 3.4vw;
+    }
+
+    &__name, &__expiration {
+      font-size: 2vw;
+    }
+  }
+
+  @include u.breakpoint-up(min) {
+    &__numbers {
+      font-size: 4.25vw;
+    }
+
+    &__name, &__expiration {
+      font-size: 2.4vw;
+    }
+  }
+
+  @include u.breakpoint-up(size) {
+    &__numbers {
+      font-size: u.rem(25);
+    }
+
+    &__name, &__expiration {
+      font-size: u.rem(14);
+    }
+  }
+
+  @include u.breakpoint-up(desktop) {
+    &__numbers {
+      font-size: 1.8vw;
+    }
+
+    &__name, &__expiration {
+      font-size: 1vw;
+    }
+  }
+
+  @include u.breakpoint-up(desktop-size) {
+    &__numbers {
+      font-size: u.rem(25);
+    }
+
+    &__name, &__expiration {
+      font-size: u.rem(14);
+    }
+  }
+}

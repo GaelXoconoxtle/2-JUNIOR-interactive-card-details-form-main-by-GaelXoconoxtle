@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="/dist/style.css">
+  <script defer src="/dist/script.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet"> 
   
   <title>Frontend Mentor | Interactive card details form</title>
 
@@ -13,39 +20,94 @@
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+
 </head>
 <body>
+  <main>
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+    <div class="cardsSection">
+      <div class="cards-container">
+        <div class="cards-child-container">
+          <div class="cards">
+            <div class="card-back">
+              <img class="card-back__img" src="images/bg-card-back.png" alt="card back">
+							<span class="card-back__cvc" id="onCardCvc">000</span>
+            </div>
+            <div class="card-front">
+              <div class="card-front__child">
+                <img class="card-front__img" src="images/bg-card-front.png" alt="card front">
+									<img class="card-front__logo" src="images/card-logo.svg" alt="card logo">
+									<span class="card-front__numbers" id="onCardCardNumber">0000 0000 0000 0000</span>
+									<span class="card-front__name" id="onCardCardName">JANE APPLESEED</span>
+									<span class="card-front__expiration"><span class="card-front__expiration-mm" id="onCardExpDateMM">00</span>/<span class="card-front__expiration-yy" id="onCardExpDateYY">00</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  000
+    <div class="formSection">
 
-  Cardholder Name
-  e.g. Jane Appleseed
+      <form id="form" class="formSection__form" action="index.html">
 
-  Card Number
-  e.g. 1234 5678 9123 0000
+        <div class="formSection__form-control">
+          <label for="cardholderName">CARDHOLDER NAME</label>
+          <input type="text" placeholder="e.g. Jane Appleseed" id="cardholderName" maxlength="21">
+          <small>Error message</small>
+        </div>
 
-  Exp. Date (MM/YY)
-  MM
-  YY
+        <div class="formSection__form-control">
+          <label for="cardNumber">CARD NUMBER</label>
+          <input type="text" placeholder="e.g. 1234 5678 9123 0000" id="cardNumber" maxlength="19" >
+          <small>Error message</small>
+        </div>
 
-  CVC
-  e.g. 123
 
-  Confirm
-
-  <!-- Completed state start -->
-
-  Thank you!
-  We've added your card details
-  Continue
+        <div class="formSection__form-ExpDateCvc">
+          <div class="formSection__form-control">
+            <label for="expDate">EXP. DATE (MM/YY)</label>
+            <div class="formSection__form-control-mmyy">
+              <div class="formSection__form-control-my">
+                <input type="text" placeholder="MM" id="expDateMM" maxlength="2">
+                <small>Error message</small>
+              </div>
+              <div class="formSection__form-control-my">
+                <input type="text" placeholder="YY" id="expDateYY" maxlength="2">
+                <small>Error message</small>
+              </div>
+            </div>
+          </div>
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+          <div class="formSection__form-control formSection__form-control-cvc">
+            <label for="cvc">CVC</label>
+            <input type="text" placeholder="e.g. 123" id="cvc" maxlength="3">
+            <small>Error message</small>
+          </div>
+        </div>
+
+        <button class="formSection__submit">Confirm</button>
+
+      </form>
+
+      <div id="completeSection" class="completeSection hidden">
+        <div class="completeSection__container">
+          <img src="/images/icon-complete.svg" alt="icon of complete with a check mark">
+          <p class="completeSection__thankYou">THANK YOU</p>
+          <P class="completeSection__text">We've added your card details</P>
+          <button onclick="location.reload()">Continue</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </footer>
+
 </body>
 </html>

@@ -1,0 +1,150 @@
+@use '../util/' as u;
+
+.formSection {
+  margin-top: u.rem(80);
+  padding: 0 u.rem(26);
+
+  @include u.breakpoint-up(size) {
+    margin-top: u.rem(110);
+  }
+
+  @include u.breakpoint-up(desktop) {
+    margin: 0;
+    padding: 0 u.rem(160) 0 u.rem(300);
+    display: flex;
+    align-items: center;
+  }
+
+  &__form {
+
+    &-control {
+      display: flex;
+      flex-direction: column;
+      
+      label {
+        font-size: u.rem(12);
+        letter-spacing: u.rem(1.2);
+        display: inline-block;
+        margin-bottom: u.rem(6);
+      }
+
+      input {
+        padding: u.rem(10) u.rem(12);
+        width: 100%;
+        border: 1px solid u.$light-grayish-violet;
+        border-radius: u.rem(8);
+        margin-bottom: u.rem(2);
+        text-transform: uppercase;
+
+        &::placeholder {
+          color: u.$light-grayish-violet;
+        }
+
+        &:focus {
+          outline: none;
+          border: double 1px transparent;
+          background-image: linear-gradient(white, white), radial-gradient(circle at top left, u.$linear-gradient1, u.$linear-gradient2);
+          background-origin: border-box;
+          background-clip: padding-box, border-box;
+        }
+      }
+
+      small {
+        font-size: u.rem(10);
+        color: u.$red;
+        margin-bottom: u.rem(14);
+        visibility: hidden;
+      }
+
+      &-mmyy {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: 98%;
+      }
+
+      &-my {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      &-cvc {
+        width: 100%;
+      }
+    }
+
+    &-ExpDateCvc {
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
+  }
+
+  // &__submit {
+  //   width: 100%;
+  //   background-color: u.$very-dark-violet;
+  //   border: none;
+  //   padding: u.rem(12) 0;
+  //   border-radius: u.rem(8);
+  //   color: white;
+  //   cursor: pointer;
+  //   transition: 100ms ease-in-out;
+
+  //   &:hover {
+  //     background-color: hsl(278, 64%, 8%);
+  //   }
+  // }
+}
+
+.error {
+  
+  input {
+    border: 1px solid u.$red;
+  }
+
+  small {
+    visibility: visible;
+  }
+}
+
+.success {
+
+  input {
+    border: 1px solid rgb(12, 167, 94);
+  }
+
+  small {
+    visibility: hidden;
+  }
+}
+
+.completeSection {
+  width: 100%;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img {
+    margin-bottom: u.rem(32);
+    margin-top: u.rem(18);
+  }
+
+  &__thankYou {
+    font-size: u.rem(26);
+    letter-spacing: u.rem(4);
+    color: u.$very-dark-violet;
+    margin-bottom: u.rem(10);
+  }
+
+  &__text {
+    font-size: u.rem(16);
+    color: u.$dark-grayish-violet;
+    margin-bottom: u.rem(36);
+  }
+
+  button {
+    max-width: u.rem(560);
+  }
+}

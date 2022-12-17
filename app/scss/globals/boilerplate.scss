@@ -1,17 +1,76 @@
 @use '../util' as u;
 
-html {
-  font-size: 100%;
-  box-sizing: border-box;
-}
-
 *, *::before, *::after {
   box-sizing: inherit;
 }
 
-body {
+* {
   margin: 0;
   padding: 0;
+  font: inherit;
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  // color-scheme: dark light;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: u.rem(18);
+  font-weight: 500;
+  letter-spacing: u.rem(1);
+}
+
+footer {
+  margin-top: u.rem(30);
+}
+
+ul {
+  list-style: none;
+}
+
+img, picture, svg, video {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  padding: 0;
+}
+
+button {
+  width: 100%;
+  background-color: u.$very-dark-violet;
+  border: none;
+  padding: u.rem(14) 0;
+  border-radius: u.rem(8);
+  color: white;
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+
+  &:hover {
+    background-color: hsl(278, 64%, 8%);
+  }
+  
+  &:active {
+    background-color: hsl(279, 55%, 6%);
+  }
+}
+
+.hidden {
+  display: none;
 }
 
 .sr-only {
